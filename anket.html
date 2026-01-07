@@ -321,6 +321,89 @@ button:hover {
       <input type="radio" name="q30" value="MD2"> Biraz<br>
       <input type="radio" name="q30" value="MD1"> Hayır
     </div>
+    <div class="question">
+     <p>31. Uygulamaların bulut sunucular üzerinde çalışması fikri ilgimi çeker.</p>
+     <input type="radio" name="q31" value="CD3" required> Evet<br>
+     <input type="radio" name="q31" value="CD2"> Biraz<br>
+     <input type="radio" name="q31" value="CD1"> Hayır
+    </div>
+
+    <div class="question">
+     <p>32. Sunucu ve sistemlerin otomatik olarak yönetilmesi bana cazip gelir.</p>
+     <input type="radio" name="q32" value="CD3" required> Evet<br>
+     <input type="radio" name="q32" value="CD2"> Biraz<br>
+     <input type="radio" name="q32" value="CD1"> Hayır
+    </div>
+
+    <div class="question">
+     <p>33. Yazılımların hızlı ve hatasız şekilde canlı ortama aktarılmasıyla ilgilenirim.</p>
+     <input type="radio" name="q33" value="CD3" required> Evet<br>
+     <input type="radio" name="q33" value="CD2"> Biraz<br>
+     <input type="radio" name="q33" value="CD1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>34. Sistemlerin yoğunluğa göre otomatik ölçeklenmesini sağlamak isterim.</p>
+      <input type="radio" name="q34" value="CD3" required> Evet<br>
+      <input type="radio" name="q34" value="CD2"> Biraz<br>
+      <input type="radio" name="q34" value="CD1"> Hayır
+    </div>
+
+    <div class="question">
+     <p>35. Otomasyon ve düzen kurarak sistemlerin sorunsuz çalışmasını sağlamak bana keyif verir.</p>
+     <input type="radio" name="q35" value="CD3" required> Evet<br>
+     <input type="radio" name="q35" value="CD2"> Biraz<br>
+     <input type="radio" name="q35" value="CD1"> Hayır
+    </div>
+
+    <div class="question">
+     <p>36. Sistemlerin performansını izlemek ve gerektiğinde müdahale etmek ilgimi çeker.</p>
+     <input type="radio" name="q36" value="CD3" required> Evet<br>
+     <input type="radio" name="q36" value="CD2"> Biraz<br>
+     <input type="radio" name="q36" value="CD1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>37. Bilgisayar ağlarının (internet, LAN, modem, router) nasıl çalıştığını öğrenmek isterim.</p>
+      <input type="radio" name="q37" value="NS3" required> Evet<br>
+      <input type="radio" name="q37" value="NS2"> Biraz<br>
+      <input type="radio" name="q37" value="NS1"> Hayır
+      </div>
+
+    <div class="question">
+      <p>38. Ağ bağlantı sorunlarını (internet kesilmesi, IP problemi vb.) çözmek bana keyif verir.</p>
+      <input type="radio" name="q38" value="NS3" required> Evet<br>
+      <input type="radio" name="q38" value="NS2"> Biraz<br>
+      <input type="radio" name="q38" value="NS1"> Hayır
+    </div>
+
+    <div class="question">
+     <p>39. Sunucu kurma ve işletim sistemi yapılandırma (Linux / Windows Server) konuları ilgimi çeker.</p>
+     <input type="radio" name="q39" value="NS3" required> Evet<br>
+     <input type="radio" name="q39" value="NS2"> Biraz<br>
+     <input type="radio" name="q39" value="NS1"> Hayır
+    </div>
+
+    <div class="question">
+     <p>40. Sistemlerin sürekli çalışır durumda olmasını sağlamak benim için önemlidir.</p>
+     <input type="radio" name="q40" value="NS3" required> Evet<br>
+     <input type="radio" name="q40" value="NS2"> Biraz<br>
+      <input type="radio" name="q40" value="NS1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>41. Ağ ve sistem güvenliği (yetkilendirme, erişim kontrolü) konularına ilgi duyarım.</p>
+      <input type="radio" name="q41" value="NS3" required> Evet<br>
+      <input type="radio" name="q41" value="NS2"> Biraz<br>
+      <input type="radio" name="q41" value="NS1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>42. Kullanıcı hesapları, yetkilendirme ve erişim izinlerini yönetmek ilgimi çeker.</p>
+      <input type="radio" name="q42" value="NS3" required> Evet<br>
+      <input type="radio" name="q42" value="NS2"> Biraz<br>
+      <input type="radio" name="q42" value="NS1"> Hayır
+    </div>
     <!-- BURAYA DİĞER SORULARI AYNI ŞEKİLDE KOYMAYA DEVAM ET -->
  <button type="button" onclick="calculateResult()">Sonucu Göster</button>
   </form>
@@ -368,6 +451,8 @@ button:hover {
     resultText += `- Siber Güvenlik (SEC): ${scores.SEC} puan\n`;
     resultText += `- Veri Bilimi(DS) : ${scores.DS} puan\n`;
     resultText += `- Mobil Geliştirme(MD) : ${scores.MD} puan\n`;
+    resultText += `- Bulut & DevOps (CD): ${scores.CD} puan\n`;
+    resultText += `- Ağ & Sistem Yönetimi (NS): ${scores.NS} puan\n`;  
 
     if (bestAreas.length === 1) {
       resultText += `\nEn uygun alan: ${bestAreas[0]} (${maxScore} puan)`;
@@ -384,4 +469,5 @@ button:hover {
 
 
 </body>
+
 </html>
