@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  body{
+    background-color: #22417e;
+  }
+  .alan-kutu {
+    width: 80%;
+    margin: 40px auto;
+    padding: 25px;
+    
+    background: rgba(230, 242, 255, 0.85); /* Açık mavi – ferah */
+    border-radius: 15px;
+
+    border-left: 8px solid #338ac4; /* Parlak Mavi */
+    box-shadow: 0 4px 15px rgba(68, 181, 255, 0.35);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .alan-kutu:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.45);
+  }
+
+  .alan-kutu h1 {
+    color: #008cff;                  /* Neon mavi başlık */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0,140,255,0.4);
+  }
+
+  .alan-kutu img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 0 0 12px rgba(0,160,255,0.35);
+  }
+  .alan-icerik-row {
+    display: flex;       /* Elemanları yan yana dizer */
+    gap: 30px;           
+    margin-bottom: 30px;
+    align-items: flex-start; 
+}
+
+.alan-img-col {
+    flex: 0 0 40%;       /* Resim için alanın %40'ı */
+    max-width: 40%;
+}
+
+.alan-text-col {
+    flex: 1;             /* Metin için kalan alanın tamamı */
+}
+
+/* Resim stili */
+.alan-img-col img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,160,255,0.35);
+}
+
+/* Mobil Uyum (768px altında alt alta dizilmesi için) */
+@media (max-width: 768px) {
+    .alan-icerik-row {
+        flex-direction: column; 
+        gap: 0;
+    }
+    .alan-img-col, .alan-text-col {
+        flex: 100%;
+        max-width: 100%;
+        margin-bottom: 20px; 
+    }
+}
+
+  .alan-kutu p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #00345c;  /* boğmayan koyu mavi */
+  }
+
+  .alan-kutu h3 {
+    color: #006bb3;  /* hafif koyu mavi */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .alan-kutu ul {
+    margin-top: 10px;
+    font-size: 17px;
+    color: #003c66;  /* okunabilir koyu mavi */
+  }
+
+  .alan-kutu ul li {
+    margin-bottom: 6px;
+  }
+  
+</style>
+</head>
+<body>
+   <div class="alan-kutu">
+    <h1>AĞ SİSTEMLERİ</h1>
+
+    <div class="alan-icerik-row">
+        
+        <div class="alan-img-col">
+            <img src="img/ağ.jpeg" alt="MUG">
+        </div>
+
+        <div class="alan-text-col">
+            <p>
+              Ağ ve sistem yönetimi, bilgisayar ağlarının ve sunucu sistemlerinin kurulması, yapılandırılması, izlenmesi ve sorunsuz şekilde çalışmasının sağlanmasıyla ilgilenen bir alandır. Bu alan; kurumlarda kullanılan bilgisayarlar, sunucular, ağ cihazları ve işletim sistemlerinin düzenli ve güvenli bir şekilde çalışmasını hedefler.
+
+Ağ ve sistem yöneticileri; internet bağlantıları, yerel ağlar (LAN), geniş alan ağları (WAN), sunucular ve kullanıcı hesaplarının yönetiminden sorumludur. Ayrıca sistemlerin performansını izler, oluşabilecek hatalara müdahale eder ve güvenlik önlemleri alır. Kurumların dijital altyapısının temelini bu alan oluşturur.
+            </p>
+            
+            <h3>Bu alanı tercih edenlerin sahip olması gerekenler:</h3>
+            <ul>
+              <li>Modem, router ve switch gibi ağ donanımlarıyla uğraşmaktan çekinmemek</li>
+              <li>Temel ağ kavramlarını (IP, DNS, DHCP vb.) öğrenmeye yatkın olmak</li>
+              <li>Bilgisayar ağlarının çalışma mantığını merak etmek ve araştırmaya hevesli olmak</li>
+              <li>Sorun tespit etme (troubleshooting) ve hızlı çözüm üretebilme becerisine sahip olmak</li>
+              <li>Sistemlerin sürekli çalışır durumda (high availability) olmasına önem vermek</li>
+              <li>Ağ güvenliği ve yetkilendirme konularına ilgi duymak</li>
+             
+            </ul>
+        </div>
+        
+    </div>
+    </div>
+<!-- ALAN DETAY SAYFALARI -->
+  <div id="alanDetay" style="margin-top:20px; font-size:17px;"></div>
+
+</section>
+</body>
+</html>
