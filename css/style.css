@@ -1,0 +1,624 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+:root {
+  --main-color: #22417e;
+  --black-color: #0e0e0e;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s ease;
+}
+/* Bu kural, bir görselin kapsayıcısının dışına taşmasını engeller ve oranını korur. */
+img {
+    max-width: 100%; 
+    height: auto;   /* Görselin en boy oranını korumak için KRİTİK. */
+    display: block; /* Bazen alt satırlarda oluşan boşlukları engeller. */
+}
+/*! base html codes  */
+html {
+  font-size: 62.5%;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  background-color: white;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 3rem;
+  background-color: var(--black-color);
+}
+
+body {
+  background-color: var(--main-color);
+  overflow-x: hidden;
+}
+
+section {
+  padding: 3.5rem 7%;
+}
+
+a {
+  color: var(--black-color);
+  text-decoration: none;
+}
+/* Ana Kapsayıcı: Diğer menü öğeleriyle hizalama için */
+.dropdown {
+    position: relative; 
+    display: inline-block; 
+}
+
+/* Açılır İçerik (Alt Menü) */
+.dropdown-content {
+    /* Başlangıçta alt menüyü gizle */
+    display: none; 
+    
+    position: absolute; 
+    background-color: #6f84ad; /* Sitenizin mavi rengi */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 100;
+    padding: 10px 0;
+    margin-top: 10px; /* Ana menüden biraz aşağıda görünmesi için */
+    border-radius: 5px; 
+}
+
+/* Alt Menüdeki Bağlantılar */
+.dropdown-content a {
+    color: white; 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; 
+    text-align: left;
+    font-size: 1.6rem; /* Navbar boyutunuza göre ayarlayın */
+}
+
+/* Üzerine Gelme Etkisi */
+.dropdown-content a:hover {
+    background-color: #1a305d; 
+}
+
+/* JS ile eklenecek sınıf: Menü açıldığında kullanılacak */
+.show {
+    display: block;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 2rem 3.75rem;
+  border-radius: 30rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: var(--black-color);
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.home {
+    /* Resmin konumu (top, right vb.) bu bölüme göre hesaplanacaktır. */
+    position: relative; 
+    background-color: #22417e;
+    
+   
+    /* Diğer stil kurallarınız (background rengi vb.) burada olmalıdır. */
+}
+
+/* 2. Resmin kendisine "absolute" veriyoruz */
+.floating-image {
+    position: absolute;
+  
+
+    /* Konum Ayarları: Boş alana yerleştirmek için bu değerleri değiştirin */
+    /* Örnek: Sağ üst köşeye yakın bir yere yerleştirme */
+    top: 300px;       /* main-content-area'nın tepesinden 50 piksel aşağı */
+    right: 20px;     /* main-content-area'nın sağından 20 piksel içeri */
+    left: 900px;
+    /* Boyut Ayarları */
+    width: 300px;    /* Resmin genişliği */
+    height: auto;    /* Oranını korur */
+    
+    /* Sayfanın önüne gelmesi için */
+    z-index: 10; 
+}
+
+.heading {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 0.1rem solid #fff;
+}
+
+.heading span {
+  color: var(--black-color);
+  text-transform: uppercase;
+}
+
+.search-input {
+  font-size: 1.6rem;
+  color: var(--black-color);
+  padding: 1rem;
+  text-transform: none;
+  border-radius: 3rem;
+}
+
+/*! header start  */
+
+
+.header .search-form {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 3rem;
+  box-shadow: 0px 0px 25px 2px rgb(0 0 0 / 75%);
+  transform: scaleY(0);
+}
+
+.header .search-form.active {
+  transform: scaleY(1);
+}
+
+.header .search-form i {
+  cursor: pointer;
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  color: var(--black-color);
+}
+
+.header .search-form input {
+  width: 100%;
+}
+
+.header .logo img {
+  height: 10rem;
+  border-radius: 25px;
+  padding: 5PX 5PX;
+}
+
+.header {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  margin: 2rem 7%;
+  border-radius: 30rem;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.robot-cikartma {
+    /* Genişliği 200 piksel olarak ayarlar */
+    width: 200px; 
+    /* Yüksekliği genişliğe göre otomatik ayarlar (görselin oranını korur) */
+    height: auto; 
+    /* Veya: 
+    max-width: 100%; 
+    height: auto; 
+    */
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: var(--black-color);
+  border-bottom: 0.1rem solid transparent;
+}
+
+.header .navbar .active,
+.header .navbar a:hover {
+  border-color: var(--main-color);
+  padding-bottom: 0.5rem;
+}
+/* slider-track: Öğeleri yan yana dizer ve kaymayı gizler */
+.slider-track {
+    display: flex;       
+    overflow-x: hidden;  
+    flex-wrap: nowrap !important; /* Alt alta geçişi engelle */
+    scroll-behavior: smooth;
+    gap: 1.5rem; /* Öğeler arası boşluğu düşürdüm */
+    padding: 1rem 0; 
+}
+
+/* slider-item: Sadece 3 kutu görünmesi için genişlik ayarı */
+.slider-item {
+    /* %100 genişliği 3 kutu + 2 boşluk (gap) olarak paylaştır */
+    /* Hesaplama: (100% - (2 * 1.5rem boşluk)) / 3 kutu */
+    min-width: calc(33.333% - 1rem); /* 1rem, boşluğun yaklaşık 1/3'ünü temsil eder */
+    flex-shrink: 0; /* Küçülmeyi engelle */
+}
+
+/* Ok Butonlarının Konumlandırılması (Tekrar kontrol amaçlı) */
+.slider-btn {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    z-index: 10; 
+    /* Diğer stil kurallarınız... */
+}
+/* ==================================================== */
+/* SLIDER ÇALIŞMAMA SORUNU GİDERME CSS KURALLARI */
+/* ==================================================== */
+
+/* 1. box-container Kuralını Ezme: Menü bölümündeki tüm öğelerin yan yana zorlanması */
+.menu .box-container {
+    display: flex !important; /* Eğer başka bir yerde eziliyorsa garanti etmek için */
+    flex-wrap: nowrap !important; /* KRİTİK: ASLA yeni satıra geçme zorlaması */
+    overflow-x: hidden; /* Kaydırma çubuğunu gizle */
+    gap: 1.5rem;
+    padding: 1rem 0; 
+    
+}
+
+
+
+/* 2. slider-item Kuralı: 3'lü görünümü garanti etme */
+.menu .slider-item {
+    /* %100 genişliği 3 kutu + boşluk (gap) olarak paylaştır */
+    min-width: calc(33.333% - 1rem) !important; /* KRİTİK: Genişliği 3'e böl ve boşluğu düş */
+    flex-shrink: 0 !important; /* KRİTİK: Öğelerin küçülmesini engeller */
+}
+
+/* 3. slider-container ve buton pozisyonları (Görünüm) */
+.menu .slider-container {
+    position: relative; 
+    width: 100%; 
+    margin: 0 auto;
+}
+
+.menu .slider-btn {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    z-index: 10; 
+    /* Diğer buton stilleriniz... */
+    background: black; 
+    color: white; 
+    border-radius: 50%;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+}
+
+
+.menu .prev-btn { left: 1rem; }
+.menu .next-btn { right: 1rem; }
+.header .buttons button {
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  background-color: transparent;
+  color: var(--black-color);
+}
+
+
+
+
+
+.header #menu-btn {
+  display: none;
+}
+
+/*! header end  */
+
+/*! home start  */
+
+.home {
+  min-height: 100vh;
+  background: url(../images/home.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: -14.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+
+/*! home end  */
+.home .content {
+  max-width: 60rem;
+}
+
+.home .content h3 {
+  font-size: 6rem;
+  color: #fff;
+}
+
+.home .content p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: #ccc;
+}
+/*! home end  */
+
+/*! menu start  */
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.menu .box-container .box {
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  background-color: #fff;
+  min-height: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.menu .box-container .box img {
+  width: 100%;
+  object-fit: cover;
+  height: 350px;
+}
+
+.menu .box-container .box .menu-category {
+  font-size: 1.2rem;
+  text-transform: lowercase;
+}
+
+.menu .box-container .box h3 {
+  font-size: 3rem;
+  padding: 1rem 0;
+}
+
+
+/*! menu end  */
+
+/*! producst start  */
+
+
+
+/*! producst end  */
+
+/*! about start  */
+.about .row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+}
+
+.about .row .image {
+  flex: 1 1 45rem;
+  
+}
+
+.about .row img {
+  width: 500px;
+  height: 400px;
+  border-radius: 30px;
+
+
+}
+
+.about .row .content {
+  flex: 1 1 45rem;
+}
+
+.about .row .content h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.about .row .content p {
+  font-size: 1.6rem;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+
+/*! about end  */
+
+/*! review start  */
+.review .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.review .box-container .box {
+  border: var(--border);
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  border-radius: 3rem;
+}
+
+.review .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding: 2rem 0;
+}
+
+.review .box-container .box .user {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review .box-container .box h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.review .box-container .box .stars i {
+  font-size: 1.5rem;
+  color: gold;
+}
+
+/*! review end  */
+
+
+
+/*! footer start  */
+.footer {
+  background-color: var(--black-color);
+  text-align: center;
+}
+
+.footer .search {
+  display: flex;
+  justify-content: center;
+}
+
+.footer .search .search-input {
+  width: 30rem;
+}
+
+.footer .search .btn-primary {
+  background-color: var(--main-color);
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+}
+
+.footer .share {
+  padding: 2rem 0;
+}
+
+.footer .share a {
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  color: #fff;
+  font-size: 2rem;
+  border: var(--border);
+  border-radius: 50%;
+  margin: 0.3rem;
+}
+
+.footer .share a:hover {
+  background-color: var(--main-color);
+}
+
+.footer .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer .links a {
+  background-color: var(--main-color);
+  padding: 0.7rem 2rem;
+  color: #fff;
+  font-size: 2rem;
+  border: var(--border);
+}
+
+.footer .links a:hover {
+  background-color: var(--black-color);
+  opacity: 0.7;
+}
+
+.footer .links a.active {
+  background-color: var(--black-color);
+}
+
+.footer .credit {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 300;
+  padding-top: 1.5rem;
+}
+
+.footer .credit span {
+  color: var(--main-color);
+}
+/*! footer end  */
+
+/*! responsive start  */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .header .logo img {
+    height: 7rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  .products .box-container .box .box-head .name {
+    font-size: 3.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header #menu-btn {
+    display: inline-block;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 95%;
+    background-color: #fff;
+    height: calc(100vh - 9rem);
+    width: 30rem;
+    box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+    right: -100%;
+  }
+
+  .header .navbar.active {
+    right: 3rem;
+  }
+
+  .header .navbar a {
+    color: var(--black-color);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+
+  .header .search-form {
+    width: 30rem;
+  }
+}
+

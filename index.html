@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  
+    <!--! header section start  -->
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="img/logo.png.png" alt="logo" />
+      </a>
+      <nav class="navbar">
+        <a class='/active' href='/'>Anasayfa</a>
+        <a href='#about'>Hakkımızda</a>
+        <a href='#review'>Yorumlar</a>
+        <div class="dropdown">
+        <a href='#' class="dropbtn" onclick="toggleDropdown()">Alanlar</a> 
+        
+        <div id="alanDropdown" class="dropdown-content">
+            <a href='html/SİBER.HTML'>SİBER GÜVENLİK</a>
+            <a href='html/web.html'>WEB GELİŞTİRME</a>
+            <a href='html/yapay.html'>YAPAY ZEKA</a>
+            <a href='html/uygulama.html'>MOBİL UYGULAMA</a>
+            <a href='html/veri.html'>VERİ BİLİMİ</a>
+            <a href='html/ağ.HTML'>AĞ SİSTEMLERİ</a>
+            <a href='html/bulut.html'>BULUT</a>
+            <a href='#menu'>Tüm Alanlar</a>
+        </div>
+    </div>
+    <a href='anket.html'>Anket</a>
+      
+      </nav>
+      <div class="buttons">
+        <button id="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+        <button id="cart-btn">
+          
+        </button>
+        <button id="menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="search-form">
+        <input
+          type="text"
+          class="search-input"
+          id="search-box"
+          placeholder="search here"
+        />
+        <i class="fas fa-search"></i>
+      </div>
+
+      
+      
+    
+    </header>
+    <!--! header section end  -->
+
+    <!--! home section start  -->
+    <section class="home" id="home">
+    <div class="content">
+        <img src="img/kararsız.png.png" alt="Kararsızlık Simgesi" class="floating-image">
+        <h3>ALAN SEÇMEDE KARARSIZ MISINIZ?</h3>
+        <p>
+            Mühendislik dalları arasındaki karmaşık seçim sürecini kolaylaştırmak için hazırladığımız **kısa anketimize katılın**. İlgi alanlarınız, yetenekleriniz ve kariyer hedefleriniz doğrultusunda size en uygun alanın hangisi olabileceğini hemen keşfedin!
+        </p>
+        <button class="btn" onclick="window.location.href='anket.html'">HEMEN ANKETE KATIL</button>
+         
+    </div>
+    <div class="content">
+
+    </div>
+    </section>
+    <section class="menu" id="menu">
+    <h1 class="heading">MÜHENDİSLİK <span>ALANLARI</span></h1>
+    
+    <div class="slider-container">
+        
+        <button class="slider-btn prev-btn">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next-btn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="box-container slider-track">
+            
+            <div class="box slider-item">
+                <div class="box-head">
+                    <img src="img/siber.jpeg" alt="menu" />
+                  
+                    <h3>SİBER GÜVENLİK</h3>
+                    
+                </div>
+                <div class="box-bottom">
+                    <button class="btn" onclick="window.location.href='SİBER.HTML'">incele</button>
+                </div>
+            </div>
+
+            
+            <div class="box slider-item">
+                <div class="box-head">
+                    <img src="img/ağ.jpeg" alt="menu" />
+                  
+                    <h3>AĞ VE SİSTEMLER</h3>
+                    
+                </div>
+                <div class="box-bottom">
+                    <button class="btn" onclick="window.location.href='AĞ SİSTEMLERİ.html'">incele</button>
+                </div>
+            </div>
+
+            
+            <div class="box slider-item">
+                <div class="box-head">
+                    <img src="img/bulut.jpeg" alt="menu" />
+                  
+                    <h3>BULUT </h3>
+                    
+                </div>
+                <div class="box-bottom">
+                    <button class="btn" onclick="window.location.href='bulut.html'">incele</button>
+                </div>
+            </div>
+            
+            <div class="box slider-item">
+                <div class="box-head">
+                    <img src="img/web.jpeg" alt="menu" />
+                    
+                    <h3>WEB GELİŞTİRME</h3>
+                    
+                </div>
+                <div class="box-bottom">
+                    <button class="btn" onclick="window.location.href='web.html'">incele</button>
+                </div>
+            </div>
+            
+            <div class="box slider-item">
+                <div class="box-head">
+                    <img src="img/yapay zeka.jpeg" alt="menu" />
+                    
+                    <h3>YAPAY ZEKA</h3>
+                   
+                </div>
+                <div class="box-bottom">
+                    <button class="btn" onclick="window.location.href='yapay.html'">incele</button>
+                
+                </div>
+            </div>
+            
+            <div class="box slider-item">
+                <div class="box-head">
+                    <img src="img/uygulama.jpeg" alt="menu" />
+                    
+                    <h3>MOBİL
+                      UYGULAMA GELİŞTİRME
+                    </h3>
+                    
+                </div>
+                <div class="box-bottom">
+                    <button class="btn" onclick="window.location.href='uygulama.html'">incele</button>
+                 
+                </div>
+            </div>
+            
+            <div class="box slider-item">
+                <div class="box-head">
+                    <img src="img/veri.jpeg" alt="menu" />
+                    
+                    <h3>VERİ BİLİMİ</h3>
+                   
+                </div>
+                <div class="box-bottom">
+                    <button class="btn" onclick="window.location.href='veri.html'">incele</button>
+                    
+                </div>
+            </div>
+            
+             
+
+        </div>
+    </div>
+</section>
+  
+    <!--! menu section end  -->
+
+ 
+  
+
+    <!--! about section start  -->
+    <section class="about" id="about">
+      <h1 class="heading">Hakkımızda <span></span></h1>
+      <div class="row">
+        <div class="image">
+          <img src="img/Hakkımızda.png" alt="about" />
+        </div>
+        <div class="content">
+          <h3>Neden Varız? (Kimsiniz ve Amacınız Ne?)</h3>
+          <p>
+            Bilgisayar Mühendisliği, geleceğin en parlak ve en geniş alanlarından biri. Ancak bu kadar çok seçenek varken, doğru kariyer yolunu bulmak bazen kafa karıştırıcı olabilir.
+
+İşte tam da bu yüzden buradayız. 
+          </p>
+          <p>
+            Bu platform, [Mevcut Öğrenciler, Yeni Mezunlar ve Kariyer Değiştirenler] için kuruldu.
+
+Amacımız, Bilgisayar Mühendisliği'nin labirentinde kaybolmadan, ilgi alanlarınıza ve yeteneklerinize en uygun uzmanlık alanını net bir şekilde belirlemeniz için size rehberlik etmektir.
+          </p>
+         
+        </div>
+      </div>
+    </section>
+    <!--! about section end  -->
+
+    <!--! review section start  -->
+    <section class="review" id="review">
+      <h1 class="heading">KULLANICI<span> YORUMLARI</span></h1>
+      <div class="box-container">
+        <div class="box">
+         
+          <p>
+           Teknik destek ve sayfa içeriğini  çok beğendim.
+           
+           anket kısmıda çok etkileyici
+           bir kez anketi  doldurmanızı ve sonuçlarını değerlendirmenizi öneririm
+          </p>
+         
+          <h3>Semih D***</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="box">
+          
+          <p>
+            bilgisayar mühendisliği öğrencisiyim ve alan konusunda çok kararsızdım 
+            bu siteye öneri ile  geldim  ve kafamda biraz oturdu........
+          </p>
+        
+          <h3>safiye A****</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="box">
+          
+          <p>
+           bi kaç yerde sorun yaşadım ama  diğer kısımlar çok iyiydiydi
+          </p>
+          
+          <h3>Feyza A****</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--! contact section end  -->
+
+    <!--! blogs section start  -->
+    
+           
+         
+    <!--! blogs section end  -->
+
+    <!--! footer section start  -->
+    <section class="footer">
+      <div class="search">
+        <input type="text" class="search-input" placeholder="Search" />
+        <button class="btn btn-primary">search</button>
+      </div>
+      <div class="share">
+        <a href="https://www.facebook.com/?locale=tr_TR" class="fab fa-facebook"></a>
+        <a href="https://x.com/?lang=tr" class="fab fa-twitter"></a>
+        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+        <a href="https://www.linkedin.com/feed/" class="fab fa-linkedin"></a>
+        <a href="https://tr.pinterest.com/" class="fab fa-pinterest"></a>
+      </div>
+
+
+      
+    </section>
+    <script src="js/script.js"></script>
+
+
+    
+    
+
+
+
+</body>
+</html>

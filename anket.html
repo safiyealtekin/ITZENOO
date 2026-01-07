@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Anket</title>
+
+<style>
+body {
+    background: #22417e;
+    color: #e8eeff;
+    font-family: "Poppins", sans-serif;
+    padding: 40px;
+}
+
+/* Başlık */
+h1, h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #00eaff, #a855f7, #ff2db3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Soru kutuları */
+.question {
+    background: rgba(20,20,40,0.5);
+    border: 1px solid rgba(0,200,255,0.25);
+    box-shadow: 0 0 15px rgba(0,150,255,0.25);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+/* Soru yazısı */
+.question p {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #d9e4ff;
+}
+
+/* Seçenek yazıları */
+.question label {
+    display: block;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Hover */
+.question label:hover {
+    background: rgba(0,200,255,0.1);
+    box-shadow: 0 0 10px rgba(0,150,255,0.4);
+}
+
+.question input[type="radio"] {
+    transform: scale(1.2);
+    margin-right: 8px;
+}
+
+/* Gönder */
+button {
+    margin-top: 25px;
+    padding: 15px 45px;
+    font-size: 22px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #00eaff, #7d4dff);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 20px rgba(0,200,255,0.5);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255,100,255,0.8);
+}
+
+/* Sonuç */
+#result {
+    margin-top: 35px;
+    background: rgba(66, 66, 141, 0.65);
+    border: 1px solid rgba(0,200,255,0.25);
+    box-shadow: 0 0 20px rgba(0,150,255,0.35);
+    padding: 25px;
+    border-radius: 18px;
+    display: none;
+    color: #d4e0ff;
+    font-size: 20px;
+    white-space: pre-line;
+
+}
+</style>
+
+</head>
+<body>
+
+<h2>Kariyer Alanı Belirleme Anketi</h2>
+
+<form id="quizForm">
+
+    <!-- BURAYA SORULARINI KOYUYORSUN -->
+    <!-- Senin attığın 1–30 arası soru kopyalandı -->
+
+    <div class="question">
+      <p>1. Makine öğrenmesi ve yapay zeka algoritmalarını anlamak ve geliştirmek isterim.</p>
+      <input type="radio" name="q1" value="AI3" required> Kesinlikle Katılıyorum<br>
+      <input type="radio" name="q1" value="AI2"> Kararsızım</br>
+      <input type="radio" name="q1" value="AI1"> Katılmıyorum
+    </div>
+         
+    <div class="question">
+      <p>2. Veri setleri üzerinde modeller kurmak ve eğitmek hoşuma gider.</p>
+      <input type="radio" name="q2" value="DS3" required> Evet<br>
+      <input type="radio" name="q2" value="DS2"> Biraz<br>
+      <input type="radio" name="q2" value="DS1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>3. Yapay zekanın hayatı kolaylaştıran çözümler üretmesini ilginç buluyorum.</p>
+      <input type="radio" name="q3" value="AI3" required> Evet<br>
+      <input type="radio" name="q3" value="AI2"> Orta<br>
+      <input type="radio" name="q3" value="AI1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>4. Doğal dil işleme ve görüntü işleme konularına ilgi duyuyorum.</p>
+      <input type="radio" name="q4" value="AI3" required> Evet<br>
+      <input type="radio" name="q4" value="AI2"> Kısmen<br>
+      <input type="radio" name="q4" value="AI1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>5. Karmaşık problemleri yapay zeka teknikleriyle çözmeyi severim.</p>
+      <input type="radio" name="q5" value="AI3" required> Evet<br>
+      <input type="radio" name="q5" value="AI2"> Bazen<br>
+      <input type="radio" name="q5" value="AI1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>6. Yapay zeka uygulamalarında etik ve sorumluluk konularını önemserim.</p>
+      <input type="radio" name="q6" value="AI3" required> Evet<br>
+      <input type="radio" name="q6" value="AI2"> Belki<br>
+      <input type="radio" name="q6" value="AI1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>7. Web siteleri ve uygulamalar tasarlamak ve kodlamak isterim.</p>
+      <input type="radio" name="q7" value="WEB3" required> Evet<br>
+      <input type="radio" name="q7" value="WEB2"> Orta<br>
+      <input type="radio" name="q7" value="WEB1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>8. Frontend (kullanıcı arayüzü) geliştirmeye ilgi duyuyorum.</p>
+      <input type="radio" name="q8" value="WEB3" required> Evet<br>
+      <input type="radio" name="q8" value="WEB2"> Biraz<br>
+      <input type="radio" name="q8" value="WEB1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>9. Backend (sunucu tarafı) programlama ve veri tabanı yönetimi ilgimi çekiyor.</p>
+      <input type="radio" name="q9" value="WEB3" required> Evet<br>
+      <input type="radio" name="q9" value="WEB2"> Kısmen<br>
+      <input type="radio" name="q9" value="WEB1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>10. Responsive ve kullanıcı dostu web tasarımları yapmak hoşuma gider.</p>
+      <input type="radio" name="q10" value="WEB3" required> Evet<br>
+      <input type="radio" name="q10" value="WEB2"> Bazen<br>
+      <input type="radio" name="q10" value="WEB1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>11. Web güvenliği ve performans optimizasyonu konularını öğrenmek isterim.</p>
+      <input type="radio" name="q11" value="SEC3" required> Evet<br>
+      <input type="radio" name="q11" value="SEC2"> Biraz<br>
+      <input type="radio" name="q11" value="SEC1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>12. Yeni web teknolojilerini takip etmek benim için önemli.</p>
+      <input type="radio" name="q12" value="WEB3" required> Evet<br>
+      <input type="radio" name="q12" value="WEB2"> Biraz<br>
+      <input type="radio" name="q12" value="WEB1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>13. Bilgisayar sistemlerinin güvenliğini sağlamak isterim.</p>
+      <input type="radio" name="q13" value="SEC3" required> Evet<br>
+      <input type="radio" name="q13" value="SEC2"> Bazen<br>
+      <input type="radio" name="q13" value="SEC1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>14. Ağ saldırılarını ve güvenlik açıklarını tespit etmek ilgimi çekiyor.</p>
+      <input type="radio" name="q14" value="SEC3" required> Evet<br>
+      <input type="radio" name="q14" value="SEC2"> Bazen<br>
+      <input type="radio" name="q14" value="SEC1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>15. Zararlı yazılımlar ve virüslerle mücadele etmeyi öğrenmek isterim.</p>
+      <input type="radio" name="q15" value="SEC3" required> Evet<br>
+      <input type="radio" name="q15" value="SEC2"> Orta<br>
+      <input type="radio" name="q15" value="SEC1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>16. Şifreleme teknikleri ve veri güvenliği konularını önemsiyorum.</p>
+      <input type="radio" name="q16" value="SEC3" required> Evet<br>
+      <input type="radio" name="q16" value="SEC2"> Biraz<br>
+      <input type="radio" name="q16" value="SEC1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>17. Siber saldırılara karşı savunma stratejileri geliştirmek hoşuma gider.</p>
+      <input type="radio" name="q17" value="SEC3" required> Evet<br>
+      <input type="radio" name="q17" value="SEC2"> Biraz<br>
+      <input type="radio" name="q17" value="SEC1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>18. Büyük veri setlerini analiz etmek ve yorumlamak hoşuma gider.</p>
+      <input type="radio" name="q18" value="DS3" required> Evet<br>
+      <input type="radio" name="q18" value="DS2"> Bazen<br>
+      <input type="radio" name="q18" value="DS1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>19. İstatistik ve veri madenciliği tekniklerini öğrenmek isterim.</p>
+      <input type="radio" name="q19" value="DS3" required> Evet<br>
+      <input type="radio" name="q19" value="DS2"> Bazen<br>
+      <input type="radio" name="q19" value="DS1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>20. Veriyi görselleştirme ve raporlama yapmayı severim.</p>
+      <input type="radio" name="q20" value="DS3" required> Evet<br>
+      <input type="radio" name="q20" value="DS2"> Orta<br>
+      <input type="radio" name="q20" value="DS1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>21. İş problemlerine veri odaklı çözümler üretmek ilgimi çekiyor.</p>
+      <input type="radio" name="q21" value="DS3" required> Evet<br>
+      <input type="radio" name="q21" value="DS2"> Orta<br>
+      <input type="radio" name="q21" value="DS1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>22. Makine öğrenmesi modelleri ile tahminler yapmak isterim.</p>
+      <input type="radio" name="q22" value="AI3" required> Evet<br>
+      <input type="radio" name="q22" value="AI2"> Biraz<br>
+      <input type="radio" name="q22" value="AI1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>23. Veri temizleme ve hazırlama işlemlerini yapmaktan keyif alırım.</p>
+      <input type="radio" name="q23" value="DS3" required> Evet<br>
+      <input type="radio" name="q23" value="DS2"> Biraz<br>
+      <input type="radio" name="q23" value="DS1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>24. Mobil cihazlar için uygulama geliştirmek isterim.</p>
+      <input type="radio" name="q24" value="MD3" required> Evet<br>
+      <input type="radio" name="q24" value="MD2"> Biraz<br>
+      <input type="radio" name="q24" value="MD1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>25. Farklı mobil platformların özelliklerini öğrenmek ilgimi çekiyor.</p>
+      <input type="radio" name="q25" value="MD3" required> Evet<br>
+      <input type="radio" name="q25" value="MD2"> Biraz<br>
+      <input type="radio" name="q25" value="MD1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>26. Mobil uygulama arayüzü tasarlamayı seviyorum.</p>
+      <input type="radio" name="q26" value="MD3" required> Evet<br>
+      <input type="radio" name="q26" value="MD2"> Orta<br>
+      <input type="radio" name="q26" value="MD1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>27. Performanslı ve kullanıcı dostu mobil uygulamalar geliştirmeye ilgi duyuyorum.</p>
+      <input type="radio" name="q27" value="MD3" required> Evet<br>
+      <input type="radio" name="q27" value="MD2"> Biraz<br>
+      <input type="radio" name="q27" value="MD1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>28. Mobil uygulamalarda hata ayıklama ve test yapmaktan keyif alırım.</p>
+      <input type="radio" name="q28" value="MD3" required> Evet<br>
+      <input type="radio" name="q28" value="MD2"> Bazen<br>
+      <input type="radio" name="q28" value="MD1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>29. Siber saldırılara karşı savunma stratejileri geliştirmek hoşuma gider.</p>
+      <input type="radio" name="q29" value="SEC3" required> Evet<br>
+      <input type="radio" name="q29" value="SEC2"> Biraz<br>
+      <input type="radio" name="q29" value="SEC1"> Hayır
+    </div>
+
+    <div class="question">
+      <p>30. Mobil uygulamalarda hata ayıklama ve test yapmaktan keyif alırım.</p>
+      <input type="radio" name="q30" value="MD3" required> Evet<br>
+      <input type="radio" name="q30" value="MD2"> Biraz<br>
+      <input type="radio" name="q30" value="MD1"> Hayır
+    </div>
+    <!-- BURAYA DİĞER SORULARI AYNI ŞEKİLDE KOYMAYA DEVAM ET -->
+ <button type="button" onclick="calculateResult()">Sonucu Göster</button>
+  </form>
+
+  <div id="result"></div>
+</div>
+<script>
+  function calculateResult() {
+    const form = document.getElementById('quizForm');
+    const formData = new FormData(form);
+
+    const scores = {
+      AI: 0,   // Yapay Zeka
+      WEB: 0,  // Web Geliştirme
+      SEC: 0,  // Siber Güvenlik
+      DS: 0,   // Veri Bilimi
+      MD: 0    // Mobil Geliştirme
+    };
+
+    // Kontrol: tüm sorular işaretlendi mi?
+    if ([...formData.entries()].length < 30) {
+      alert("Lütfen tüm soruları cevaplayınız!");
+      return;
+    }
+
+    for (const value of formData.values()) {
+      const area = value.slice(0, value.length - 1);  // AI, WEB, SEC, DS, MD
+      const point = parseInt(value.slice(-1));        // 1,2,3 puan
+
+      if (scores.hasOwnProperty(area)) {
+        scores[area] += point;
+      }
+    }
+
+    // En yüksek puanı bul
+    const maxScore = Math.max(...Object.values(scores));
+    const bestAreas = Object.entries(scores)
+      .filter(([_, score]) => score === maxScore)
+      .map(([area]) => area);
+
+    // Yazdırılacak sonuç metni
+    let resultText = "Alan Bazlı Puanlar:\n";
+    resultText += `- Yapay Zeka(AI) : ${scores.AI} puan\n`;
+    resultText += `- Web Geliştirme(WEB) : ${scores.WEB} puan\n`;
+    resultText += `- Siber Güvenlik (SEC): ${scores.SEC} puan\n`;
+    resultText += `- Veri Bilimi(DS) : ${scores.DS} puan\n`;
+    resultText += `- Mobil Geliştirme(MD) : ${scores.MD} puan\n`;
+
+    if (bestAreas.length === 1) {
+      resultText += `\nEn uygun alan: ${bestAreas[0]} (${maxScore} puan)`;
+    } else {
+      resultText += `\nEn uygun alanlar (eşit puan): ${bestAreas.join(", ")} (${maxScore} puan)`;
+    }
+
+    // Sonucu ekrana yaz
+    const resultDiv = document.getElementById('result');
+    resultDiv.style.display = "block";
+    resultDiv.textContent = resultText;
+  }
+</script>
+
+
+</body>
+</html>

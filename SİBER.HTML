@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  body{
+    background-color: #22417e;
+  }    
+  
+  .alan-kutu {
+    width: 80%;
+    margin: 40px auto;
+    padding: 25px;
+    
+    background: #e1dede; /* Açık mavi – ferah */
+    border-radius: 15px;
+
+    border-left: 8px solid #124160; /* Parlak Mavi */
+    box-shadow: 0 4px 15px rgba(68, 181, 255, 0.35);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .alan-kutu:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.45);
+  }
+
+  .alan-kutu h1 {
+    color: #008cff;                  /* Neon mavi başlık */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0,140,255,0.4);
+  }
+
+  .alan-kutu img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 0 0 12px rgba(0,160,255,0.35);
+  }
+
+  .alan-kutu p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #00345c;  /* boğmayan koyu mavi */
+  }
+
+  .alan-kutu h3 {
+    color: #006bb3;  /* hafif koyu mavi */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .alan-kutu ul {
+    margin-top: 10px;
+    font-size: 17px;
+    color: #003c66;  /* okunabilir koyu mavi */
+  }
+
+  .alan-kutu ul li {
+    margin-bottom: 6px;
+  }
+  /* Ana Kapsayıcıyı Flexbox ile Ayarlama */
+.alan-icerik-row {
+    display: flex;        /* İçindeki elemanları yan yana dizer */
+    gap: 30px;            /* Resim ve metin arasında boşluk bırakır */
+    margin-bottom: 30px;  /* Aşağıdaki başlıktan boşluk bırakır */
+    align-items: flex-start; /* Elemanları yukarı hizalar */
+}
+
+/* Resim Kolonu Genişliği */
+.alan-img-col {
+    /* Resim için alanın yaklaşık %40'ını kullan */
+    flex: 0 0 40%; 
+    max-width: 40%;
+}
+
+/* Metin Kolonu Genişliği */
+.alan-text-col {
+    /* Metin için kalan alanın yaklaşık %60'ını kullan */
+    flex: 1; /* Geri kalan alanı kapla */
+}
+
+/* Resim stilini bu yeni yapıya göre ayarla */
+.alan-img-col img {
+    width: 100%;
+    /* max-width artık gereksiz, üst div kontrol ediyor */
+    border-radius: 10px;
+    /* margin-bottom: 20px; eski yapıda gerekliydi, burada kaldırıldı */
+    display: block;
+    box-shadow: 0 0 12px rgba(0,160,255,0.35);
+}
+
+/* Mobil Uyum (İsteğe Bağlı) */
+/* Eğer ekran 768px'ten küçükse, tekrar alt alta dizilmesi için */
+@media (max-width: 768px) {
+    .alan-icerik-row {
+        flex-direction: column; /* Alt alta dizer */
+        gap: 0;
+    }
+    .alan-img-col, .alan-text-col {
+        flex: 100%;
+        max-width: 100%;
+        margin-bottom: 20px; /* Resmin altına boşluk */
+    }
+}
+  
+  
+</style>
+</head>
+<body>
+    <div class="alan-kutu">
+    <h1>SİBER GÜVENLİK</h1>
+
+    <div class="alan-icerik-row">
+        
+        <div class="alan-img-col">
+            <img src="img/siber.jpeg" alt="Siber Güvenlik Resmi">
+        </div>
+
+        <div class="alan-text-col">
+            <p>
+              Siber güvenlik, dijital ortamda bulunan bilgi ve sistemlerin kötü niyetli saldırılara, yetkisiz erişimlere ve zarar görmeye karşı korunmasıdır. İnternet ve teknoloji kullanımının yaygınlaşmasıyla birlikte, kişisel veriler, şirket bilgileri ve kritik altyapılar siber tehditlere karşı savunmasız hale gelmiştir. Siber güvenlik uzmanları, bilgisayar ağlarını, web sitelerini, uygulamaları ve veritabanlarını korumak için çeşitli güvenlik önlemleri alır. Bunlar arasında şifreleme, güvenlik duvarları, antivirüs programları, saldırı tespiti ve önleme sistemleri yer alır. Ayrıca kullanıcıların güçlü şifreler kullanması ve bilinçli davranması da siber güvenliğin önemli parçalarındandır. Günümüzde her kurumun ve bireyin dijital dünyada güvenliğini sağlamak için siber güvenlik önlemlerine büyük önem vermesi gerekmektedir.
+            </p>
+            
+            <h3>Bu alanı tercih edenlerin sahip olması gerekenler:</h3>
+            <ul>
+              
+              <li>Analitik düşünme yeteneğine sahip olmak</li>
+              <li>Problem çözme becerisi ve detaylara dikkat etmek</li>
+              <li>Sabırlı ve dikkatli olmak (saldırıları fark etmek için)</li>
+              <li>Temel ağ ve internet bilgisine sahip olmak (IP, protokoller vb.)</li>
+              <li>Sürekli öğrenmeye açık olmak çünkü teknoloji hızla değişir</li>
+              <li>Temel programlama bilgisi (Python, Bash gibi) avantaj sağlar</li>
+              <li>Güvenlik araçlarını öğrenmeye istekli olmak (antivirüs, firewall, IDS/IPS)</li>
+              <li>Ekip çalışmasına yatkın olmak çünkü siber güvenlik genellikle takım işidir</li>
+             
+            </ul>
+        </div>
+        
+    </div>
+    </div>
+<!-- ALAN DETAY SAYFALARI -->
+  <div id="alanDetay" style="margin-top:20px; font-size:17px;"></div>
+
+</section>
+    
+</body>
+</html>

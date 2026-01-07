@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  body{
+    background-color: #22417e;
+  }    
+  .alan-kutu {
+    width: 80%;
+    margin: 40px auto;
+    padding: 25px;
+    
+    background: rgba(230, 242, 255, 0.85); /* Açık mavi – ferah */
+    border-radius: 15px;
+
+    border-left: 8px solid #44b5ff; /* Parlak Mavi */
+    box-shadow: 0 4px 15px rgba(68, 181, 255, 0.35);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .alan-kutu:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.45);
+  }
+  .alan-icerik-row {
+    display: flex;       /* Elemanları yan yana dizer */
+    gap: 30px;           
+    margin-bottom: 30px;
+    align-items: flex-start; 
+}
+
+.alan-img-col {
+    flex: 0 0 40%;       /* Resim için alanın %40'ı */
+    max-width: 40%;
+}
+
+.alan-text-col {
+    flex: 1;             /* Metin için kalan alanın tamamı */
+}
+
+/* Resim stili */
+.alan-img-col img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,160,255,0.35);
+}
+
+/* Mobil Uyum (768px altında alt alta dizilmesi için) */
+@media (max-width: 768px) {
+    .alan-icerik-row {
+        flex-direction: column; 
+        gap: 0;
+    }
+    .alan-img-col, .alan-text-col {
+        flex: 100%;
+        max-width: 100%;
+        margin-bottom: 20px; 
+    }
+}
+
+  .alan-kutu h1 {
+    color: #008cff;                  /* Neon mavi başlık */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0,140,255,0.4);
+  }
+
+  .alan-kutu img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 0 0 12px rgba(0,160,255,0.35);
+  }
+
+  .alan-kutu p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #00345c;  /* boğmayan koyu mavi */
+  }
+
+  .alan-kutu h3 {
+    color: #006bb3;  /* hafif koyu mavi */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .alan-kutu ul {
+    margin-top: 10px;
+    font-size: 17px;
+    color: #003c66;  /* okunabilir koyu mavi */
+  }
+
+  .alan-kutu ul li {
+    margin-bottom: 6px;
+  }
+  
+</style>
+</head>
+<body>
+  <div class="alan-kutu">
+    <h1>WEB GELİŞTİRME</h1>
+
+    <div class="alan-icerik-row">
+        
+        <div class="alan-img-col">
+            <img src="img/veri.jpeg" alt="VERİ">
+        </div>
+
+        <div class="alan-text-col">
+           <p>   Web geliştirme, internet üzerinde çalışan web sitelerinin ve web uygulamalarının oluşturulması sürecidir. Bu süreç; sitenin görünen kısmının tasarlanmasını, sayfanın yapısının kodlanmasını, kullanıcı ile etkileşimi sağlayan işlevlerin oluşturulmasını ve arka planda çalışan sunucu yapılarının yönetilmesini içerir. Web geliştiriciler, HTML ile sayfanın temel iskeletini kurar, CSS ile renk, konum ve stil ekleyerek görünümü düzenler, JavaScript ile sayfaya hareket ve dinamik özellikler kazandırır. Arka uçta ise veri tabanları, kullanıcı işlemleri, sunucu yönetimi ve güvenlik gibi işlemler yapılır. Web geliştirme hem tasarım hem de yazılım bileşenlerini bir araya getirdiği için oldukça geniş bir alandır ve günümüzde işletmelerin, kurumların ve bireylerin dijital dünyada varlık göstermesi için büyük önem taşır. Bu nedenle web geliştiriciler hem kullanıcıya güzel görünen hem de hızlı ve güvenli çalışan siteler üretmekle sorumludur. </p>  <h3>Web geliştiricinin sahip olması gereken temel beceriler</h3>  <ul>   <li>Temel HTML, CSS ve JavaScript bilmek</li>   <li>Basit ve düzenli tasarım yapabilmek</li>   <li>Kod hatalarını fark edip düzeltebilmek</li>   <li>Mantıklı ve dikkatli çalışabilmek</li>   <li>Yeni şeyler öğrenmeye açık olmak</li>   <li>Bilgisayar kullanımı ve internet araçlarına hakim olmak</li>   <li>Takımla iletişim kurabilmek</li> </ul>
+        </div>
+        
+    </div>
+    </div>
+   
+<!-- ALAN DETAY SAYFALARI -->
+  <div id="alanDetay" style="margin-top:20px; font-size:17px;"></div>
+
+</section>
+</body>
+</html>
