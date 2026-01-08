@@ -420,17 +420,19 @@ button:hover {
       WEB: 0,  // Web Geliştirme
       SEC: 0,  // Siber Güvenlik
       DS: 0,   // Veri Bilimi
-      MD: 0    // Mobil Geliştirme
+      MD: 0,   // Mobil Geliştirme
+      CD:0,   //Bulut & Devops
+      NS:0    // Ağ ve Sistem Yönetimi
     };
 
     // Kontrol: tüm sorular işaretlendi mi?
-    if ([...formData.entries()].length < 30) {
+    if ([...formData.entries()].length < 42) {
       alert("Lütfen tüm soruları cevaplayınız!");
       return;
     }
 
     for (const value of formData.values()) {
-      const area = value.slice(0, value.length - 1);  // AI, WEB, SEC, DS, MD
+      const area = value.slice(0, value.length - 1);  // AI, WEB, SEC, DS, MD,CD,NS
       const point = parseInt(value.slice(-1));        // 1,2,3 puan
 
       if (scores.hasOwnProperty(area)) {
@@ -471,3 +473,4 @@ button:hover {
 </body>
 
 </html>
+
